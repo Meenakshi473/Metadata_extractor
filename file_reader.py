@@ -2,7 +2,6 @@ import fitz  # PyMuPDF
 import docx
 import pytesseract
 from PIL import Image
-import cv2
 import os
 import chardet
 import requests
