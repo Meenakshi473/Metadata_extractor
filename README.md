@@ -1,4 +1,4 @@
-# 🧠 Metadata Extractor
+#  Metadata Extractor
 
 **AI-powered document analysis tool**  
 Extracts metadata from `.pdf`, `.docx`, `.txt`, and image files using NLP and OCR.
@@ -35,42 +35,26 @@ Extracts metadata from `.pdf`, `.docx`, `.txt`, and image files using NLP and OC
 
 ```bash
 pip install -r requirements.txt
-
----
 You also need to get a free OCR API key from OCR.space.
-Update it in file_reader.py:
+Update it in file_reader.py like this:
+
+python
+Copy code
 'apikey': 'your_api_key_here'
-- **Why:** Guides others to get it running smoothly.
-
----
-
-### 5. 🧪 **How to Run**
-```markdown
-**## 🧪 Run the App**
-
-```bash
+🧪 Run the App
+bash
+Copy code
 streamlit run app.py
-- **Why:** Quick-start instructions for developers and testers.
+🌐 Live Demo
+Click here to try it on Streamlit Cloud
 
----
-
-### 6. 🌐 **Live Demo / Deployment**
-
-```markdown
-## 🌐 Live Demo
-
-[Click here to try it on Streamlit Cloud](https://share.streamlit.io/your-app-link)
----
-
-## 📁 Folder Structure
-├── app.py # Streamlit interface
-├── file_reader.py # File reading and OCR logic
-├── metadata_extractor.py # Metadata extraction logic
+📁 Folder Structure
+bash
+Copy code
+.
+├── app.py                  # Streamlit interface
+├── file_reader.py          # File reading and OCR logic
+├── metadata_extractor.py   # Metadata extraction logic
 ├── requirements.txt
 ├── README.md
-└── screenshots/
-
-
-
-
-
+└── screenshots/   
