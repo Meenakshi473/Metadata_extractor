@@ -5,6 +5,7 @@ from PIL import Image
 import cv2
 import os
 import chardet
+import requests
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 
@@ -36,23 +37,22 @@ def read_pdf(file_path):
  except Exception as e:
         raise ValueError(f"Error reading PDF: {e}")
 def read_image(file_path):
- try:
-    # Load and preprocess image
-    img = cv2.imread(file_path)
-    if img is None:
-        raise ValueError("Could not load image")
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-    _, thresh = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
-
-    #noise reduction
-    denoised = cv2.medianBlur(thresh, 3)
-    pil_img = Image.fromarray(denoised)
-    text = pytesseract.image_to_string(pil_img)
-    return text
- except Exception as e:
-        raise ValueError(f"Error processing image: {e}")
-
+    try:
+        with open(file_path, 'rb') as f:
+            response = requests.post(
+                'https://api.ocr.space/parse/image',
+                files={'filename': f},
+                data={
+                    'apikey': 'K88180486988957',
+                    'language': 'eng',
+                },
+            )
+        result = response.json()
+        if result.get("IsErroredOnProcessing"):
+            raise ValueError(result.get("ErrorMessage", "OCR failed"))
+        return result['ParsedResults'][0]['ParsedText']
+    except Exception as e:
+        raise ValueError(f"Cloud OCR failed: {e}")
 def extract_text(file_path):
     ext = os.path.splitext(file_path)[-1].lower()
     if ext == '.txt':

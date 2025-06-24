@@ -1,0 +1,12 @@
+streamlit
+fitz  # or PyMuPDF
+python-docx
+pytesseract
+pillow
+opencv-python
+chardet
+spacy
+keybert
+transformers
+torch
+reuests
