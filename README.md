@@ -37,20 +37,17 @@ Extracts metadata from `.pdf`, `.docx`, `.txt`, and image files using NLP and OC
 pip install -r requirements.txt
 You also need to get a free OCR API key from OCR.space.
 Update it in file_reader.py like this:
-
-python
-Copy code
 'apikey': 'your_api_key_here'
+---
 🧪 Run the App
-bash
-Copy code
 streamlit run app.py
+---
 🌐 Live Demo
 Click here to try it on Streamlit Cloud
+---
 
 📁 Folder Structure
-bash
-Copy code
+
 .
 ├── app.py                  # Streamlit interface
 ├── file_reader.py          # File reading and OCR logic
