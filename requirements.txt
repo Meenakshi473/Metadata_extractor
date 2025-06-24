@@ -1,5 +1,5 @@
 streamlit
-fitz  # or PyMuPDF
+PyMuPDF
 python-docx
 pytesseract
 pillow
