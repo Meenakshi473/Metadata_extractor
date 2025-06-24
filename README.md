@@ -26,6 +26,8 @@ Extracts metadata from `.pdf`, `.docx`, `.txt`, and image files using NLP and OC
 
 ### 🔹 Extracted Metadata
 ![metadata](screenshots/metadata.png)
+![metadata](screenshots/metadata1.png)
+![metadata](screenshots/metadata2.png)
 
 ---
 
