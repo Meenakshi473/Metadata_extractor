@@ -44,7 +44,7 @@ Update it in file_reader.py:
 
 ### 5. 🧪 **How to Run**
 ```markdown
-## 🧪 Run the App
+**## 🧪 Run the App**
 
 ```bash
 streamlit run app.py
