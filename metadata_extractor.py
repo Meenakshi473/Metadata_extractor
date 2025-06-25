@@ -130,6 +130,21 @@ import os
 
 # File size
 
+def extract_title(text):
+    doc = nlp(text)
+
+    for sent in list(doc.sents)[:5]:
+        cleaned = sent.text.strip()
+        if 5 <= len(cleaned.split()) <= 15:
+            return cleaned
+
+    noun_chunks = [chunk.text.strip() for chunk in doc.noun_chunks if 3 <= len(chunk.text.split()) <= 10]
+    if noun_chunks:
+        return max(noun_chunks, key=len)
+
+    
+    return list(doc.sents)[0].text.strip() if doc.sents else "Untitled Document"
+
 def file_info(file_path=None):
     if file_path:
         try:
@@ -167,6 +182,9 @@ def extract_metadata(text,file_path=None):
 
     # Named Entities: extract entities with labels
     entities=genrate_entities(text)
+    #title
+    title = extract_title(text)
+
 
    #summary
     summary_adv= generate_summary(text)
@@ -180,10 +198,8 @@ def extract_metadata(text,file_path=None):
         "summary":summary_adv.strip(),
         "file_format": file_format,
         "file_size": file_size,
-        #"word_count": word_count
+       
     }
-    print("DEBUG - file_path:", file_path)
-    print("DEBUG - file_size:", file_size)
-    print("DEBUG - file_format:", file_format)
+    
 
     return metadata
