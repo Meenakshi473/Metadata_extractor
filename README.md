@@ -55,5 +55,6 @@ Click here to try it on Streamlit Cloud
 ├── file_reader.py          # File reading and OCR logic
 ├── metadata_extractor.py   # Metadata extraction logic
 ├── requirements.txt
+|-- newvid.mp4               #video demonstaration of the app
 ├── README.md
 └── screenshots/   
