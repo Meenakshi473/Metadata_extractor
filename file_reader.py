@@ -1,4 +1,4 @@
-import PyMuPDF as fitz
+import pymupdf as fitz
 import docx
 from PIL import Image
 import os
