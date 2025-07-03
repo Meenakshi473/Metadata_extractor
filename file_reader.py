@@ -1,10 +1,9 @@
-import fitz  # PyMuPDF
+import PyMuPDF as fitz
 import docx
 from PIL import Image
 import os
 import chardet
 import requests
-
 
 
 def read_txt(file_path):
