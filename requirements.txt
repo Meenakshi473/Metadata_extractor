@@ -1,12 +1,9 @@
-streamlit
-PyMuPDF
-python-docx
-pillow
-opencv-python
-chardet
-spacy
-keybert
-transformers
-torch
-requests
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
+chardet==5.2.0
+fitz==0.0.1.dev2
+keybert==0.9.0
+Pillow==11.3.0
+python_docx==1.2.0
+Requests==2.32.4
+spacy==3.8.7
+streamlit==1.46.0
+transformers==4.52.4
